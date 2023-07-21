@@ -18,19 +18,19 @@ app.get('/', (req, res) => {
 // Routes - Tutorials
 app.get('/tutorials', catchAsync (async (req, res) => {
     const tutorials = await Tutorial.find({})
-    res.json(tutorials)
+    res.json({ tutorials })
 }))
 
 // Routes - APIs
 app.get('/apis', catchAsync (async (req, res) => {
     const apis = await API.find({})
-    res.json(apis)
+    res.json({ apis })
 }))
 
 // Routes - Stories
 app.get('/stories', catchAsync (async (req, res) => {
     const stories = await Story.find({})
-    res.json(stories)
+    res.json({ stories })
 }))
 
 app.get('/stories/new', (req, res) => {
@@ -46,13 +46,13 @@ app.post('/stories', catchAsync (async (req, res) => {
 app.get('/stories/:id', catchAsync (async (req, res) => {
     const { id } = req.params
     const story = await Story.findById(id)
-    res.json(story)
+    res.json({ story })
 }))
 
 app.get('/stories/:id/edit', catchAsync (async (req, res) => {
     const { id } = req.params
     const story = await Story.findById(id)
-    res.json(story)
+    res.json({ story })
 }))
 
 app.put('/stories/:id', catchAsync (async (req, res) => {
