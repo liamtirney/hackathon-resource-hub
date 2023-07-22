@@ -3,19 +3,19 @@ const { Schema, model } = mongoose;
 
 const apiSchema = new Schema({
     title: String,
-    img: String,
+    image: String,
     description: String,
     docsLink: String,
     youtubeLinks: [
         {
             title: String,
-            link: String
+            link: String,
         }
     ],
     articleLinks: [
         {
             title: String,
-            link: String
+            link: String,
         }
     ]
 });
