@@ -1,6 +1,18 @@
 const express = require('express');
 const catchAsync = require('./utils/catchAsync')
 const path = require("path");
+const mongoose = require('mongoose');
+const Tutorial = require('../models/tutorial');
+const Api = require('../models/api');
+const Story = require('../models/story');
+
+mongoose.connect('mongodb://127.0.0.1:27017/hackathon-resource-hub')
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection error:'));
+db.once('open', () => {
+    console.log('Database connected');
+})
 
 const app = express();
 const port = 5000;
@@ -23,7 +35,7 @@ app.get('/tutorials', catchAsync (async (req, res) => {
 
 // Routes - APIs
 app.get('/apis', catchAsync (async (req, res) => {
-    const apis = await API.find({})
+    const apis = await Api.find({})
     res.json({ apis })
 }))
 
@@ -69,5 +81,5 @@ app.delete('/stories/:id', catchAsync (async (req,res) => {
 
 // Server
 app.listen(port, () => {
-    console.log(`Listening on ${port}`)
+    console.log(`Serving on port ${port}`)
 })

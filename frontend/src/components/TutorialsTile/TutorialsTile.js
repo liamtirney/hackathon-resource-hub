@@ -13,10 +13,10 @@ import CodeIcon from '@mui/icons-material/Code';
 import Box from '@mui/material/Box';
 
 export default function TutorialsTile( { data }) {
-  const openLink = () => window.open("https://www.google.com/");
+  const openLink = (url) => () => {window.open(url)};
   return (
     <Card sx={{ maxWidth: 345, mb: 5 }}>
-      <CardActionArea onClick={openLink}>
+      <CardActionArea onClick={openLink(data.link)}>
         <CardMedia
           sx={{ height: 140 }}
           image="/static/images/cards/contemplative-reptile.jpg"
@@ -36,9 +36,17 @@ export default function TutorialsTile( { data }) {
 						flexGrow: 1,
 						display: 'flex'
 					}}>
-          <Button size="large" onClick={openLink}><PlayCircleIcon/></Button>
-          <Button size="large" onClick={openLink}><GitHubIcon/></Button>
-          <Button size="large" onClick={openLink}><CodeIcon/></Button>
+          <Button size="large" onClick={openLink(data.link)}>
+            <PlayCircleIcon/>
+          </Button>
+          <Button size="large" onClick={openLink(data.githubLink)}
+          >
+            <GitHubIcon/>
+          </Button>
+          <Button size="large" onClick={openLink(data.sampleCodeLink)}
+          >
+            <CodeIcon/>
+          </Button>
         </Box>
       </CardActions>
     </Card>
