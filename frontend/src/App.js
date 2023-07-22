@@ -8,6 +8,32 @@ import Tutorials from './pages/tutorials';
 import APIs from './pages/apis';
 import Stories from './pages/stories';
 
+/* Functions to send requests to backend */
+const requestHeaders = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+}
+
+const requestOptionsGet = {
+	method: 'GET',
+	headers: requestHeaders
+}
+
+export const getTutorials = async () => {
+	try {
+		const response = await fetch(`https://localhost:5000/tutorials`, requestOptionsGet);
+		let results = await response.json();
+		console.log(results);
+	} catch (err) {
+		console.error(`Error calling getTutorials`);
+	}
+
+}
+
+
+
+/* Main App Component */
+
 function App() {
 	return (
 		<Router>
