@@ -6,9 +6,9 @@ const sampleData = {
 	title: "Sample Tutorial",
 	image: "",
 	description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-	link: "sample link",
-	github: "github link",
-	sampleCodeLink: "sample code link"
+	link: "https://www.youtube.com/",
+	githubLink: "https://www.github.com/",
+	sampleCodeLink: "https://www.google.com/"
 }
 
 const Tutorials = () => {
