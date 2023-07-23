@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import ApisTiles from '../components/ApisTile/ApisTile';
+import { getApis } from '../App.js';
 
 const sampleData = {
 	title: "OpenAI API",
@@ -12,6 +13,11 @@ const sampleData = {
 }
 
 const APIs = () => {
+	
+
+	useEffect(() => {
+		getApis();
+	})
 
 	const getApisTiles = () => {
 		let apisTiles = [];

@@ -18,6 +18,16 @@ export const getStories = async () => {
 	}
 }
 
+export const getApis = async () => {
+	try {
+		const response = await fetch('/apis')
+		let results = await response.json();
+		console.log(results)
+	} catch (e) {
+		console.error('Error getting data from apis route')
+	}
+}
+
 function App() {
 	return (
 		<Router>
