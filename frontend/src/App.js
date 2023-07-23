@@ -18,6 +18,7 @@ export const getStories = async () => {
 	}
 }
 
+<<<<<<< HEAD
 export const getApis = async () => {
 	try {
 		const response = await fetch('/apis')
@@ -28,6 +29,34 @@ export const getApis = async () => {
 	}
 }
 
+=======
+/* Functions to send requests to backend */
+const requestHeaders = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+}
+
+const requestOptionsGet = {
+	method: 'GET',
+	// headers: requestHeaders
+}
+
+export const getTutorials = async () => {
+	try {
+		const response = await fetch(`http://localhost:3010/tutorials`);
+		let results = await response.json();
+		return results.tutorials
+	} catch (err) {
+		console.error(`Error calling getTutorials`);
+	}
+
+}
+
+
+
+/* Main App Component */
+
+>>>>>>> 084c1b6faa89cc5890ec6e2ca108c131097e984c
 function App() {
 	return (
 		<Router>
