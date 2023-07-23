@@ -1,6 +1,26 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import StoriesTile from '../components/StoriesTile/StoriesTile';
+
+const sampleData = {
+	title: "Sergei Garcia",
+	tagLine: "From no CS Degree to a Fortune 500 Software Developer",
+	image: "https://images.unsplash.com/photo-1681165558258-dd4f98a35823?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxtYWxlJTIwZW1wbG95ZWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
+	name: "Sergei Garcia",
+	body: "Random motivational message!",
+	link: "https://www.freecodecamp.org/news/my-journey-to-becoming-a-web-developer-from-scratch-without-a-cs-degree-2-years-later-and-what-i-4a7fd2ff5503"
+}
 
 const Stories = () => {
+
+	const getStoriesTiles = () => {
+		let storiesTiles = [];
+		for (let i = 0; i < 9; i++) {
+			storiesTiles.push(<StoriesTile data={sampleData}/>)
+		}
+		return storiesTiles;
+	}
+
 	return (
 		<div>
 			<h1>Stories</h1>
@@ -14,6 +34,11 @@ const Stories = () => {
 				occaecat cupidatat non proident, sunt in culpa qui officia 
 				deserunt mollit anim id est laborum.
 			</h4>
+			<Box display="flex" justifyContent="space-evenly"
+				flexWrap="wrap" alignContent="space-evenly"
+			>
+				{getStoriesTiles()}
+			</Box>
 		</div>
 	);
 };

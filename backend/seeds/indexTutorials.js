@@ -12,14 +12,14 @@ db.once('open', () => {
 
 const seedDB = async () => {
     await Tutorial.deleteMany({});
-    for (let i in sampleTutorials) {
+    for (let sampleTutorial of sampleTutorials) {
         const tutorial = new Tutorial({
-            title: `${sampleTutorials[i].title}`,
-            image: `${sampleTutorials[i].image}`,
-            description: `${sampleTutorials[i].description}`,
-            link: `${sampleTutorials[i].link}`,
-            githubLink: `${sampleTutorials[i].githubLink}`,
-            sampleCodeLink: `${sampleTutorials[i].sampleCodeLink}`
+            title: sampleTutorial.title,
+            image: sampleTutorial.image,
+            description: sampleTutorial.description,
+            link: sampleTutorial.link,
+            githubLink: sampleTutorial.githubLink,
+            sampleCodeLink: sampleTutorial.sampleCodeLink
         })
         await tutorial.save();
     }
