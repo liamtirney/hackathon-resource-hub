@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
 import TutorialsTile from '../components/TutorialsTile/TutorialsTile';
+import { getTutorials } from '../App';
 
 const sampleData = {
 	title: "Sample Tutorial",
@@ -12,11 +13,23 @@ const sampleData = {
 }
 
 const Tutorials = () => {
+	const [data, setData] = useState([]);
+	// const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+		(async() => {
+			const tutorialsData = await getTutorials();
+			console.log(tutorialsData)
+			setData(tutorialsData);
+			// setLoaded(true)
+		})()
+  }, [])
 
 	const getTutorialsTiles = () => {
 		let tutorialsTiles = [];
-		for (let i = 0; i < 9; i++) {
-			tutorialsTiles.push(<TutorialsTile data={sampleData}/>)
+		for (let i = 0; i < data.length; i++) {
+			console.log(data[i]);
+			tutorialsTiles.push(<TutorialsTile data={data[i]}/>)
 		}
 
 		return tutorialsTiles;

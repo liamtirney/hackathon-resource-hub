@@ -18,6 +18,32 @@ export const getStories = async () => {
 	}
 }
 
+/* Functions to send requests to backend */
+const requestHeaders = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+}
+
+const requestOptionsGet = {
+	method: 'GET',
+	// headers: requestHeaders
+}
+
+export const getTutorials = async () => {
+	try {
+		const response = await fetch(`http://localhost:3010/tutorials`);
+		let results = await response.json();
+		return results.tutorials
+	} catch (err) {
+		console.error(`Error calling getTutorials`);
+	}
+
+}
+
+
+
+/* Main App Component */
+
 function App() {
 	return (
 		<Router>
