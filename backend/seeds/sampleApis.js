@@ -38,5 +38,49 @@ module.exports = [
                 link: "https://medium.com/@maxtingle/getting-started-with-spotifys-api-spotipy-197c3dc6353b"
             }
         ]
+    },
+    {
+        title: "Notion API",
+        image: "https://images.unsplash.com/photo-1648805777291-a1c45cc26f26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG5vdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60",
+        description: "Connect Notion pages and databases to the tools you use every day, creating powerful workflows",
+        docsLink: "https://developers.notion.com/docs/getting-started",
+        youtubeLinks: [
+            {
+                title: "Notion API - Full Crash Course",
+                link: "https://www.youtube.com/watch?v=ec5m6t77eYM&pp=ygUTTm90aW9uIGFwaSB0dXRvcmlhbA%3D%3D"
+            },
+            {
+                title: "How to Build Workflows with the Notion Api",
+                link: "https://www.youtube.com/watch?v=jiVDZZUSRfU&pp=ygUTTm90aW9uIGFwaSB0dXRvcmlhbA%3D%3D "
+            }
+        ],
+        articleLinks: [
+            {
+                title: "Getting Started with Spotify's API",
+                link: "https://medium.com/@maxtingle/getting-started-with-spotifys-api-spotipy-197c3dc6353b"
+            }
+        ]
+    },
+    {
+        title: "Notion API",
+        image: "https://images.unsplash.com/photo-1648805777291-a1c45cc26f26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG5vdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60",
+        description: "Connect Notion pages and databases to the tools you use every day, creating powerful workflows",
+        docsLink: "https://developers.notion.com/docs/getting-started",
+        youtubeLinks: [
+            {
+                title: "Notion API - Full Crash Course",
+                link: "https://www.youtube.com/watch?v=ec5m6t77eYM&pp=ygUTTm90aW9uIGFwaSB0dXRvcmlhbA%3D%3D"
+            },
+            {
+                title: "How to Build Workflows with the Notion Api",
+                link: "https://www.youtube.com/watch?v=jiVDZZUSRfU&pp=ygUTTm90aW9uIGFwaSB0dXRvcmlhbA%3D%3D "
+            }
+        ],
+        articleLinks: [
+            {
+                title: "Postman API 101",
+                link: "https://medium.com/sliit-foss/postman-api-101-3bb12dd553f4"
+            }
+        ]
     }
 ]
