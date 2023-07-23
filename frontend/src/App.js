@@ -23,7 +23,6 @@ export const getTutorials = async () => {
 	try {
 		const response = await fetch(`http://localhost:3010/tutorials`);
 		let results = await response.json();
-		// console.log(results);
 		return results.tutorials
 	} catch (err) {
 		console.error(`Error calling getTutorials`);

@@ -16,7 +16,9 @@ export default function TutorialsTile( { data }) {
   const openLink = (url) => () => {window.open(url)};
 
   return (
-    <Card sx={{ maxWidth: 345, mb: 5 }}>
+    <Card sx={{ 
+      display: 'flex', flexDirection: 'column', 
+      maxWidth: 345, mb: 5 }}>
       <CardActionArea onClick={openLink(data.link)}>
         <CardMedia
           sx={{ height: 140 }}
@@ -32,10 +34,10 @@ export default function TutorialsTile( { data }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions sx={{ marginTop: 'auto' }}>
         <Box sx={{ 
 						flexGrow: 1,
-						display: 'flex'
+            display: 'flex',
 					}}>
           <Button size="large" onClick={openLink(data.link)}>
             <PlayCircleIcon/>

@@ -14,14 +14,14 @@ const sampleData = {
 
 const Tutorials = () => {
 	const [data, setData] = useState([]);
-	const [loaded, setLoaded] = useState(false)
+	// const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
 		(async() => {
 			const tutorialsData = await getTutorials();
 			console.log(tutorialsData)
 			setData(tutorialsData);
-			setLoaded(true)
+			// setLoaded(true)
 		})()
   }, [])
 
@@ -53,7 +53,7 @@ const Tutorials = () => {
 			<Box display="flex" justifyContent="space-evenly"
 				flexWrap="wrap" alignContent="space-evenly"
 			>
-				{loaded && getTutorialsTiles()}
+				{getTutorialsTiles()}
 			</Box>
 		</div>
 	);
