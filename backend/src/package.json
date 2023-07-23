@@ -2,9 +2,11 @@
   "name": "hackathon-resource-hub",
   "version": "1.0.0",
   "description": "Attend Hacks for Hackers hackathon where the goal is to \"build creative projects that empower you and your fellow hackers to do more\"",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "keywords": [],
   "author": "",

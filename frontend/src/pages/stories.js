@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import StoriesTile from '../components/StoriesTile/StoriesTile';
+import { getStories } from '../App.js';
 
 const sampleData = {
 	title: "Sergei Garcia",
@@ -12,6 +13,10 @@ const sampleData = {
 }
 
 const Stories = () => {
+
+	useEffect(() => {
+		getStories();
+	})
 
 	const getStoriesTiles = () => {
 		let storiesTiles = [];

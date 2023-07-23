@@ -4,7 +4,7 @@ const path = require("path");
 const mongoose = require('mongoose');
 const Tutorial = require('../models/tutorial');
 const Api = require('../models/api');
-const Story = require('../models/story');
+// const Story = require('../models/story');
 
 mongoose.connect('mongodb://127.0.0.1:27017/hackathon-resource-hub')
 
@@ -25,6 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Routes - Home
 app.get('/', (req, res) => {
     res.render('home')
+})
+
+app.get('/api', (req, res) => {
+    res.json({ "users": ["userOne", "userTwo", "userThree"] })
 })
 
 // Routes - Tutorials
