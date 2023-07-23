@@ -8,6 +8,16 @@ import Tutorials from './pages/tutorials';
 import APIs from './pages/apis';
 import Stories from './pages/stories';
 
+export const getStories = async () => {
+	try {
+		const response = await fetch('/stories')
+		let results = await response.json();
+		console.log(results)
+	} catch (e) {
+		console.error('Error getting data from stories route')
+	}
+}
+
 function App() {
 	return (
 		<Router>
