@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardActions from '@mui/material/CardActions';
@@ -14,12 +14,13 @@ import Box from '@mui/material/Box';
 
 export default function TutorialsTile( { data }) {
   const openLink = (url) => () => {window.open(url)};
+
   return (
     <Card sx={{ maxWidth: 345, mb: 5 }}>
       <CardActionArea onClick={openLink(data.link)}>
         <CardMedia
           sx={{ height: 140 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={data.image}
           title="tutorial name"
         />
         <CardContent>
