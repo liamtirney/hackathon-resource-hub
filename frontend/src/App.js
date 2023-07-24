@@ -12,7 +12,7 @@ export const getStories = async () => {
 	try {
 		const response = await fetch('/stories')
 		let results = await response.json();
-		console.log(results)
+		return results.stories
 	} catch (e) {
 		console.error('Error getting data from stories route')
 	}
@@ -22,7 +22,7 @@ export const getApis = async () => {
 	try {
 		const response = await fetch('/apis')
 		let results = await response.json();
-		console.log(results)
+		return results.apis
 	} catch (e) {
 		console.error('Error getting data from apis route')
 	}

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import StoriesTile from '../components/StoriesTile/StoriesTile';
-import { getStories } from '../App.js';
+import { getStories } from '../App';
 
 const sampleData = {
 	title: "Sergei Garcia",
@@ -13,15 +13,24 @@ const sampleData = {
 }
 
 const Stories = () => {
+	const [data, setData] = useState([]);
+	// const [loaded, setLoaded] = useState(false)
 
 	useEffect(() => {
-		getStories();
-	})
+		(async() => {
+			const storiesData = await getStories();
+			console.log("Here's the story data: ", storiesData);
+			setData(storiesData);
+			// setLoaded(true);
+		})()
+  	}, [])
 
 	const getStoriesTiles = () => {
 		let storiesTiles = [];
-		for (let i = 0; i < 9; i++) {
-			storiesTiles.push(<StoriesTile data={sampleData}/>)
+		// console.log("Test here: ", storiesTiles);
+		for (let i = 0; i < data.length; i++) {
+			// console.log(data[i])
+			storiesTiles.push(<StoriesTile data={data[i]}/>)
 		}
 		return storiesTiles;
 	}
@@ -30,14 +39,7 @@ const Stories = () => {
 		<div>
 			<h1>Stories</h1>
 			<h4>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-				sed do eiusmod tempor incididunt ut labore et dolore magna 
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-				ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				Duis aute irure dolor in reprehenderit in voluptate velit 
-				esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-				occaecat cupidatat non proident, sunt in culpa qui officia 
-				deserunt mollit anim id est laborum.
+				Programming is a blast, but breaking into the tech field and landing that first developer role can be a hard and arduous journey. It's important to ask yourself what you want and what your goals are, work consistently on skills that align with those goals, and understand that it takes time. If you're curious about others journey into tech, read these inspiring stories.
 			</h4>
 			<Box display="flex" justifyContent="space-evenly"
 				flexWrap="wrap" alignContent="space-evenly"

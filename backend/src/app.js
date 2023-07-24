@@ -4,8 +4,8 @@ const path = require("path");
 const mongoose = require('mongoose');
 let cors = require('cors');
 const Tutorial = require('../models/tutorial');
-// const Api = require('../models/api');
-// const Story = require('../models/story');
+const Api = require('../models/api');
+const Story = require('../models/story');
 
 mongoose.connect('mongodb://127.0.0.1:27017/hackathon-resource-hub')
 
@@ -43,50 +43,50 @@ app.get('/tutorials', async (req, res) => {
 })
 
 // Routes - APIs
-// app.get('/apis', catchAsync (async (req, res) => {
-//     const apis = await Api.find({})
-//     res.json({ apis })
-// }))
+app.get('/apis', catchAsync (async (req, res) => {
+    const apis = await Api.find({})
+    res.json({ apis })
+}))
 
 // Routes - Stories
-// app.get('/stories', catchAsync (async (req, res) => {
-//     const stories = await Story.find({})
-//     res.json({ stories })
-// }))
+app.get('/stories', catchAsync (async (req, res) => {
+    const stories = await Story.find({})
+    res.json({ stories })
+}))
 
-// app.get('/stories/new', (req, res) => {
-//     res.render('stories/new')
-// })
+app.get('/stories/new', (req, res) => {
+    res.render('stories/new')
+})
 
-// app.post('/stories', catchAsync (async (req, res) => {
-//     const story = new Story(req.body.story)
-//     const savedStory = await story.save()
-//     res.redirect(`/stories/${story._id}`)
-// }))
+app.post('/stories', catchAsync (async (req, res) => {
+    const story = new Story(req.body.story)
+    const savedStory = await story.save()
+    res.redirect(`/stories/${story._id}`)
+}))
 
-// app.get('/stories/:id', catchAsync (async (req, res) => {
-//     const { id } = req.params
-//     const story = await Story.findById(id)
-//     res.json({ story })
-// }))
+app.get('/stories/:id', catchAsync (async (req, res) => {
+    const { id } = req.params
+    const story = await Story.findById(id)
+    res.json({ story })
+}))
 
-// app.get('/stories/:id/edit', catchAsync (async (req, res) => {
-//     const { id } = req.params
-//     const story = await Story.findById(id)
-//     res.json({ story })
-// }))
+app.get('/stories/:id/edit', catchAsync (async (req, res) => {
+    const { id } = req.params
+    const story = await Story.findById(id)
+    res.json({ story })
+}))
 
-// app.put('/stories/:id', catchAsync (async (req, res) => {
-//     const { id } = req.params
-//     const story = await Story.findByIdAndUpdate(id, { ...req.body.story })
-//     res.redirect(`/stories/${story._id}`)
-// }))
+app.put('/stories/:id', catchAsync (async (req, res) => {
+    const { id } = req.params
+    const story = await Story.findByIdAndUpdate(id, { ...req.body.story })
+    res.redirect(`/stories/${story._id}`)
+}))
 
-// app.delete('/stories/:id', catchAsync (async (req,res) => {
-//     const { id } = req.params
-//     const story = await Story.findByIdAndDelete(id)
-//     res.redirect('/stories')
-// }))
+app.delete('/stories/:id', catchAsync (async (req,res) => {
+    const { id } = req.params
+    const story = await Story.findByIdAndDelete(id)
+    res.redirect('/stories')
+}))
 
 // Server
 app.listen(port, () => {
