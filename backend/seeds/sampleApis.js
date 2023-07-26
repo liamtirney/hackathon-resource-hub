@@ -79,4 +79,22 @@ module.exports = [
             }
         ]
     }
+    // {
+    //     title: "",
+    //     image: "",
+    //     description: "",
+    //     docsLink: "",
+    //     youtubeLinks: [
+    //         {
+    //             title: "",
+    //             link: ""
+    //         }
+    //     ],
+    //     articleLinks: [
+    //         {
+    //             title: "",
+    //             link: ""
+    //         }
+    //     ]
+    // }
 ]
