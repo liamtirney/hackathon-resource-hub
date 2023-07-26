@@ -13,13 +13,32 @@ import CodeIcon from '@mui/icons-material/Code';
 import Box from '@mui/material/Box';
 
 export default function ApisTile( { data }) {
-    const openLink = (url) => () => {window.open(url)};
+    const openLink = (url) => () => {
+        window.open(url)
+    };
+
+    // if (!data) (
+    //     return null;
+    // )
+
+    const youtubeButtons = data.youtubeLinks.map((linkObj, index) => (
+        <Button key={index} size="large" onClick={openLink(linkObj.link)}>
+            <PlayCircleIcon />
+        </Button>
+    ));
+    
+    const articleButtons = data.articleLinks.map((linkObj, index) => (
+        <Button key={index} size="large" onClick={openLink(linkObj.link)}>
+            <CodeIcon />
+        </Button>
+    ));
+
     return (
-      <Card sx={{ maxWidth: 345, mb: 5 }}>
+      <Card sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, minWidth: 345, mb: 5 }}>
         <CardActionArea onClick={openLink(data.docsLink)}>
           <CardMedia
             sx={{ height: 140 }}
-            image="/static/images/cards/contemplative-reptile.jpg"
+            image={data.image}
             title="api name"
           />
           <CardContent>
@@ -31,22 +50,16 @@ export default function ApisTile( { data }) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
+        <CardActions sx={{ marginTop: 'auto', justifyContent: 'center', paddingTop: 0 }}>
           <Box sx={{ 
-                flexGrow: 1,
-                display: 'flex'
+                // flexGrow: 1, 
+                // display: 'flex' 
             }}>
-            <Button size="large" onClick={openLink(Object.values(data.youtubeLinks)[1])}>
-              <PlayCircleIcon/>
-            </Button>
-            <Button size="large" onClick={openLink(data.docsLink)}
-            >
+            {youtubeButtons}
+            <Button size="large" onClick={openLink(data.docsLink)}>
               <GitHubIcon/>
             </Button>
-            <Button size="large" onClick={openLink(Object.values(data.articleLinks)[1])}
-            >
-              <CodeIcon/>
-            </Button>
+            {articleButtons}
           </Box>
         </CardActions>
       </Card>
