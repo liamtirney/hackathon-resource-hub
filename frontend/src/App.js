@@ -31,7 +31,7 @@ const requestOptionsGet = {
 
 export const getTutorials = async () => {
 	try {
-		const response = await fetch(`http://localhost:3010/tutorials`);
+		const response = await fetch(`/tutorials`);
 		let results = await response.json();
 		return results.tutorials
 	} catch (err) {

@@ -6,11 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import LinkIcon from '@mui/icons-material/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CodeIcon from '@mui/icons-material/Code';
 import Box from '@mui/material/Box';
+import Tooltip from '@mui/material/Tooltip';
 
 export default function TutorialsTile( { data }) {
   const openLink = (url) => () => {window.open(url)};
@@ -19,7 +19,7 @@ export default function TutorialsTile( { data }) {
     <Card sx={{ 
       display: 'flex', flexDirection: 'column', 
       maxWidth: 345, mb: 5 }}>
-      <CardActionArea onClick={openLink(data.link)}>
+      <CardActionArea sx={{ height: '100%', marginTop: 0 }} onClick={openLink(data.link)}>
         <CardMedia
           sx={{ height: 140 }}
           image={data.image}
@@ -34,22 +34,23 @@ export default function TutorialsTile( { data }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions sx={{ marginTop: 'auto' }}>
-        <Box sx={{ 
-						flexGrow: 1,
-            display: 'flex',
-					}}>
+      <CardActions sx={{ marginTop: 0, justifyContent:"space-evenly" }}>
+        <Box>
           <Button size="large" onClick={openLink(data.link)}>
-            <PlayCircleIcon/>
+            <LinkIcon/>
           </Button>
-          <Button size="large" onClick={openLink(data.githubLink)}
-          >
-            <GitHubIcon/>
-          </Button>
-          <Button size="large" onClick={openLink(data.sampleCodeLink)}
-          >
-            <CodeIcon/>
-          </Button>
+          <Tooltip title="GitHub" placement="top">
+            <Button size="large" onClick={openLink(data.githubLink)}
+            >
+              <GitHubIcon/>
+            </Button>
+          </Tooltip>
+          <Tooltip title="Sample Code" placement="top">
+            <Button size="large" onClick={openLink(data.sampleCodeLink)}
+            >
+              <CodeIcon/>
+            </Button>
+          </Tooltip>
         </Box>
       </CardActions>
     </Card>
