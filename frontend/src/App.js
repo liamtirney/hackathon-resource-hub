@@ -8,29 +8,6 @@ import Tutorials from './pages/tutorials';
 import APIs from './pages/apis';
 import Stories from './pages/stories';
 
-export const getStories = async () => {
-	try {
-		const response = await fetch('/stories')
-		let results = await response.json();
-		return results.stories
-	} catch (e) {
-		console.error('Error getting data from stories route')
-	}
-}
-
-<<<<<<< HEAD
-=======
-export const getApis = async () => {
-	try {
-		const response = await fetch('/apis')
-		let results = await response.json();
-		return results.apis
-	} catch (e) {
-		console.error('Error getting data from apis route')
-	}
-}
-
->>>>>>> 60e0e8115f8fc87de9499992b71ca9e9f8b84063
 /* Functions to send requests to backend */
 const requestHeaders = {
   'Content-Type': 'application/json',
@@ -44,24 +21,32 @@ const requestOptionsGet = {
 
 export const getTutorials = async () => {
 	try {
-		const response = await fetch(`http://localhost:3010/tutorials`);
+		const response = await fetch(`/tutorials`);
 		let results = await response.json();
 		return results.tutorials
 	} catch (err) {
-		console.error(`Error calling getTutorials`);
+		console.error(`Error getting data from tutorials route`);
 	}
-
 }
 
 export const getApis = async () => {
 	try {
-		const response = await fetch(`http://localhost:3010/apis`);
+		const response = await fetch(`/apis`);
 		let results = await response.json();
 		return results.apis
 	} catch (err) {
-		console.error(`Error calling getApis`);
+		console.error(`Error getting data from apis route`);
 	}
+}
 
+export const getStories = async () => {
+	try {
+		const response = await fetch('/stories')
+		let results = await response.json();
+		return results.stories
+	} catch (e) {
+		console.error('Error getting data from stories route')
+	}
 }
 
 /* Main App Component */
