@@ -19,7 +19,7 @@ const Tutorials = () => {
   useEffect(() => {
 		(async() => {
 			const tutorialsData = await getTutorials();
-			console.log(tutorialsData)
+			// console.log(tutorialsData)
 			setData(tutorialsData);
 			// setLoaded(true)
 		})()
@@ -28,7 +28,7 @@ const Tutorials = () => {
 	const getTutorialsTiles = () => {
 		let tutorialsTiles = [];
 		for (let i = 0; i < data.length; i++) {
-			console.log(data[i]);
+			// console.log(data[i]);
 			tutorialsTiles.push(<TutorialsTile data={data[i]}/>)
 		}
 

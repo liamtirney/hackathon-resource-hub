@@ -12,12 +12,25 @@ export const getStories = async () => {
 	try {
 		const response = await fetch('/stories')
 		let results = await response.json();
-		console.log(results)
+		return results.stories
 	} catch (e) {
 		console.error('Error getting data from stories route')
 	}
 }
 
+<<<<<<< HEAD
+=======
+export const getApis = async () => {
+	try {
+		const response = await fetch('/apis')
+		let results = await response.json();
+		return results.apis
+	} catch (e) {
+		console.error('Error getting data from apis route')
+	}
+}
+
+>>>>>>> 60e0e8115f8fc87de9499992b71ca9e9f8b84063
 /* Functions to send requests to backend */
 const requestHeaders = {
   'Content-Type': 'application/json',
