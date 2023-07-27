@@ -78,23 +78,81 @@ module.exports = [
                 link: "https://medium.com/sliit-foss/postman-api-101-3bb12dd553f4"
             }
         ]
+    },
+    {
+        title: "Twilio",
+        image: "https://images.crunchbase.com/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/zy6ttel4bwjtojwcf3cu",
+        description: "An API that allows you to query metadata about your account, phone numbers, calls, text messages, and recordings",
+        docsLink: "https://www.twilio.com/docs/api",
+        youtubeLinks: [
+            {
+                title: "Send SMS using the Twilio API using Node.js",
+                link: "https://www.youtube.com/watch?v=vs4in-UFdX0&pp=ygUTdHdpbGlvIGFwaSB0dXRvcmlhbA%3D%3D,"
+            },
+            {
+                title: "Twilio SMS API Tutorial",
+                link: "https://www.youtube.com/watch?v=b8Od7uxc7Yo&pp=ygUTdHdpbGlvIGFwaSB0dXRvcmlhbA%3D%3D"
+            }
+        ],
+        articleLinks: [
+            {
+                title: "How to use the Twilio API",
+                link: "https://www.thenina.com/how-to-use-the-twilio-api/"
+            }
+        ]
+    },
+    {
+        title: "Slack",
+        image: "https://images.unsplash.com/photo-1660137340590-d48549625980?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2xhY2slMjBhcHB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60”",
+        description: "An interface for querying information from Slack and enacting changes in a workspace",
+        docsLink: "https://api.slack.com/automation/quickstart",
+        youtubeLinks: [
+            {
+                title: "Slack API Tutorial",
+                link: "https://www.youtube.com/watch?v=lEQ68HhpO4g&pp=ygUZaG93IHRvIHVzZSB0aGUgc2xhY2sgYXBpIA%3D%3D"
+            }
+        ],
+        articleLinks: [
+            {
+                title: "6 Really Cool Things You Can Do With The Slack API",
+                link: "https://dispatch.m.io/slack-api/"
+            }
+        ]
+    },
+    {
+        title: "Github",
+        image: "https://images.unsplash.com/photo-1654277041218-84424c78f0ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpdGh1YnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60",
+        description: "To create integrations, retrieve data, and automate your workflows",
+        docsLink: "https://docs.github.com/en/rest?apiVersion=2022-11-28",
+        youtubeLinks: [
+            {
+                title: "Github REST API Crash Course with Vanilla JavaScript",
+                link: "https://www.youtube.com/watch?v=5QlE6o-iYcE&pp=ygUmaG93IHRvIHVzZSB0aGUgZ2l0aHViIGFwaSBjcmFzaCBjb3Vyc2U%3D"
+            }
+        ],
+        articleLinks: [
+            {
+                title: "How to use the Github API",
+                link: "https://codesnippet.io/github-api-tutorial/"
+            }
+        ]
+    },
+    {
+        title: "Datadog",
+        image: "https://mma.prnewswire.com/media/1434744/Datadog_Logo.jpg",
+        description: "An API that allows you to harness the power of the Datadog platform",
+        docsLink: "https://docs.datadoghq.com/api/latest/",
+        youtubeLinks: [
+            {
+                title: "How to use the Datadog API",
+                link: "https://www.youtube.com/watch?v=WseEmd-o5yE&t=116s&pp=ygUaaG93IHRvIHVzZSB0aGUgZGF0YWRvZyBhcGk%3D"
+            }
+        ],
+        articleLinks: [
+            {
+                title: "Datadog API Integrations",
+                link: "https://pipedream.com/apps/datadog"
+            }
+        ]
     }
-    // {
-    //     title: "",
-    //     image: "",
-    //     description: "",
-    //     docsLink: "",
-    //     youtubeLinks: [
-    //         {
-    //             title: "",
-    //             link: ""
-    //         }
-    //     ],
-    //     articleLinks: [
-    //         {
-    //             title: "",
-    //             link: ""
-    //         }
-    //     ]
-    // }
 ]
