@@ -18,19 +18,6 @@ export const getStories = async () => {
 	}
 }
 
-<<<<<<< HEAD
-=======
-export const getApis = async () => {
-	try {
-		const response = await fetch('/apis')
-		let results = await response.json();
-		return results.apis
-	} catch (e) {
-		console.error('Error getting data from apis route')
-	}
-}
-
->>>>>>> 60e0e8115f8fc87de9499992b71ca9e9f8b84063
 /* Functions to send requests to backend */
 const requestHeaders = {
   'Content-Type': 'application/json',
@@ -55,13 +42,12 @@ export const getTutorials = async () => {
 
 export const getApis = async () => {
 	try {
-		const response = await fetch(`http://localhost:3010/apis`);
+		const response = await fetch('/apis')
 		let results = await response.json();
 		return results.apis
-	} catch (err) {
-		console.error(`Error calling getApis`);
+	} catch (e) {
+		console.error('Error getting data from apis route')
 	}
-
 }
 
 /* Main App Component */

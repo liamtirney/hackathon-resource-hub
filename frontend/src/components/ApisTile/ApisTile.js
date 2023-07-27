@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import ArticleIcon from '@mui/icons-material/Article';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CodeIcon from '@mui/icons-material/Code';
 import Box from '@mui/material/Box';
@@ -29,7 +30,7 @@ export default function ApisTile( { data }) {
     
     const articleButtons = data.articleLinks.map((linkObj, index) => (
         <Button key={index} size="large" onClick={openLink(linkObj.link)}>
-            <CodeIcon />
+            <ArticleIcon />
         </Button>
     ));
 
@@ -55,10 +56,10 @@ export default function ApisTile( { data }) {
                 // flexGrow: 1, 
                 // display: 'flex' 
             }}>
-            {youtubeButtons}
             <Button size="large" onClick={openLink(data.docsLink)}>
-              <GitHubIcon/>
+              <CodeIcon />
             </Button>
+            {youtubeButtons}
             {articleButtons}
           </Box>
         </CardActions>
