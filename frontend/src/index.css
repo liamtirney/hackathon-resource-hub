@@ -18,3 +18,16 @@ h1, h4 {
   margin-left: 25px;
   margin-right: 25px;
 }
+
+#storyHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+#storyH1, #shareButton {
+  margin: 21.44px 25px;
+}
+
+h4 {
+  margin-top: 0;
+}

@@ -59,7 +59,7 @@ function App() {
 				<Route exact path='/' exact element={<Home />} />
 				<Route path='/tutorials' element={<Tutorials />} />
 				<Route path='/apis' element={<APIs />} />
-        <Route path='/stories' element={<Stories />} />
+        		<Route path='/stories' element={<Stories />} />
 			</Routes>
 		</Router>
 	);
