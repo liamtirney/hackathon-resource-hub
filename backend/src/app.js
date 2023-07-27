@@ -5,11 +5,7 @@ const mongoose = require('mongoose');
 let cors = require('cors');
 const Tutorial = require('../models/tutorial');
 const Api = require('../models/api');
-<<<<<<< HEAD
-// const Story = require('../models/story');
-=======
 const Story = require('../models/story');
->>>>>>> 60e0e8115f8fc87de9499992b71ca9e9f8b84063
 
 mongoose.connect('mongodb://127.0.0.1:27017/hackathon-resource-hub')
 
@@ -48,12 +44,7 @@ app.get('/tutorials', async (req, res) => {
 
 // Routes - APIs
 app.get('/apis', catchAsync (async (req, res) => {
-<<<<<<< HEAD
-    const apis = await Api.find({});
-    console.log(apis)
-=======
     const apis = await Api.find({})
->>>>>>> 60e0e8115f8fc87de9499992b71ca9e9f8b84063
     res.json({ apis })
 }))
 
