@@ -54,8 +54,9 @@ app.get('/stories', catchAsync (async (req, res) => {
     res.json({ stories })
 }))
 
-app.get('/stories/new', (req, res) => {
-    res.render('stories/new')
+app.get('/stories/shareStory', (req, res) => {
+    // res.render('stories/new')
+    res.json({ shareStory })
 })
 
 app.post('/stories', catchAsync (async (req, res) => {

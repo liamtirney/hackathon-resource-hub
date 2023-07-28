@@ -17,7 +17,7 @@ const sampleData = {
 
 const Stories = () => {
 	let navigate = useNavigate();
-	
+
 	const [data, setData] = useState([]);
 	// const [loaded, setLoaded] = useState(false)
 
@@ -44,7 +44,7 @@ const Stories = () => {
 		<div>
 			<div id="storyHeader">
 				<h1 id="storyH1">Stories</h1>
-				<Button id="shareButton" variant="contained" onClick={() => navigate('/apis')}>Share</Button>
+				<Button id="shareButton" variant="contained" onClick={() => navigate('/shareStory')}>Share</Button>
 			</div>
 			<h4>
 				Programming is a blast, but breaking into the tech field and landing that first developer role can be a hard and arduous journey. It's important to ask yourself what you want and what your goals are, work consistently on skills that align with those goals, and understand that it takes time. If you're curious about others journey into tech, read these inspiring stories.
