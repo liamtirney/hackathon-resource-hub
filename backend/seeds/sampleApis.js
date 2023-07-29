@@ -40,6 +40,28 @@ module.exports = [
         ]
     },
     {
+        title: "OpenWeatherMap",
+        image: "https://cdn.jim-nielsen.com/ios/512/weather-2021-12-07.png",
+        description: "Essential weather data and aggregated historical weather data",
+        docsLink: "https://openweathermap.org/api/one-call-3",
+        youtubeLinks: [
+            {
+                title: "How to make a Weather App using JavaScript",
+                link: "https://youtu.be/MIYQR-Ybrn4"
+            },
+            {
+                title: "Weather API Tutorial in Python",
+                link: "https://youtu.be/9P5MY_2i7K8"
+            }
+        ],
+        articleLinks: [
+            {
+                title: "Build a real time weather app using JavaScript and the OpenWeatherMap API",
+                link: "https://javascript.plainenglish.io/build-a-real-time-weather-app-with-javascript-and-openweathermap-api-bcf8111df1fe"
+            }
+        ]
+    },
+    {
         title: "Notion API",
         image: "https://images.unsplash.com/photo-1648805777291-a1c45cc26f26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG5vdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60",
         description: "Connect Notion pages and databases to the tools you use every day, creating powerful workflows",
