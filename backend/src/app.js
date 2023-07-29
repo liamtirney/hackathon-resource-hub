@@ -1,5 +1,6 @@
 const express = require('express');
-const catchAsync = require('./utils/catchAsync')
+const catchAsync = require('./utils/catchAsync');
+const ExpressError = require('./utils/ExpressError');
 const path = require("path");
 const mongoose = require('mongoose');
 let cors = require('cors');
@@ -34,13 +35,13 @@ app.get('/api', (req, res) => {
 })
 
 // Routes - Tutorials
-app.get('/tutorials', async (req, res) => {
+app.get('/tutorials', catchAsync (async (req, res) => {
     const tutorials = await Tutorial.find({});
     console.log(tutorials)
     res.json({ tutorials })
     // console.log("backend reached successfully");
     // res.json({message: "successful"});
-})
+}))
 
 // Routes - APIs
 app.get('/apis', catchAsync (async (req, res) => {
@@ -88,6 +89,16 @@ app.delete('/stories/:id', catchAsync (async (req,res) => {
     const story = await Story.findByIdAndDelete(id)
     res.redirect('/stories')
 }))
+
+app.all('*', (req, res, next) => {
+    next(new ExpressError('Oops looks like you ended up in the wrong spot!', 404))
+})
+
+app.use( (err, req, res, next) => {
+    const { statusCode = 500 } = err;
+    if (!err.message) err.message = "Oops, Something went wrong"
+    res.status(statusCode).render('error', { err })
+})
 
 // Server
 app.listen(port, () => {
