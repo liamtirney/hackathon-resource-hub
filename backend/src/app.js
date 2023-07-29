@@ -46,7 +46,10 @@ app.get('/tutorials', catchAsync (async (req, res) => {
 // Routes - APIs
 app.get('/apis', catchAsync (async (req, res) => {
     const apis = await Api.find({})
+<<<<<<< HEAD
     console.log(apis)
+=======
+>>>>>>> 78388f5ca283f9d4b6fa2cd93aa8e1cff539264c
     res.json({ apis })
 }))
 
@@ -56,8 +59,9 @@ app.get('/stories', catchAsync (async (req, res) => {
     res.json({ stories })
 }))
 
-app.get('/stories/new', (req, res) => {
-    res.render('stories/new')
+app.get('/stories/shareStory', (req, res) => {
+    // res.render('stories/new')
+    res.json({ shareStory })
 })
 
 app.post('/stories', catchAsync (async (req, res) => {

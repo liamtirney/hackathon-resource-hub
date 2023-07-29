@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import StoriesTile from '../components/StoriesTile/StoriesTile';
 import { getStories } from '../App';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 
 const sampleData = {
 	title: "Sergei Garcia",
@@ -13,6 +16,8 @@ const sampleData = {
 }
 
 const Stories = () => {
+	let navigate = useNavigate();
+
 	const [data, setData] = useState([]);
 	// const [loaded, setLoaded] = useState(false)
 
@@ -37,7 +42,10 @@ const Stories = () => {
 
 	return (
 		<div>
-			<h1>Stories</h1>
+			<div id="storyHeader">
+				<h1 id="storyH1">Stories</h1>
+				<Button id="shareButton" variant="contained" onClick={() => navigate('/shareStory')}>Share</Button>
+			</div>
 			<h4>
 				Programming is a blast, but breaking into the tech field and landing that first developer role can be a hard and arduous journey. It's important to ask yourself what you want and what your goals are, work consistently on skills that align with those goals, and understand that it takes time. If you're curious about others journey into tech, read these inspiring stories.
 			</h4>

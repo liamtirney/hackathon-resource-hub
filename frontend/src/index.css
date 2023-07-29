@@ -18,3 +18,30 @@ h1, h4 {
   margin-left: 25px;
   margin-right: 25px;
 }
+
+#storyHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+#storyH1, #shareButton {
+  margin: 21.44px 25px;
+}
+
+h4 {
+  margin-top: 0;
+}
+
+#shareForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 10px;
+  margin: 60px auto;
+  width: 400px;
+}
+
+#formBorderTop {
+  margin-top: 25px;
+}
