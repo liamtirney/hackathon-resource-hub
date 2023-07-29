@@ -8,16 +8,6 @@ import Tutorials from './pages/tutorials';
 import APIs from './pages/apis';
 import Stories from './pages/stories';
 
-export const getStories = async () => {
-	try {
-		const response = await fetch('/stories')
-		let results = await response.json();
-		return results.stories
-	} catch (e) {
-		console.error('Error getting data from stories route')
-	}
-}
-
 /* Functions to send requests to backend */
 const requestHeaders = {
   'Content-Type': 'application/json',
@@ -47,6 +37,16 @@ export const getApis = async () => {
 		return results.apis
 	} catch (e) {
 		console.error('Error getting data from apis route')
+	}
+}
+
+export const getStories = async () => {
+	try {
+		const response = await fetch('/stories')
+		let results = await response.json();
+		return results.stories
+	} catch (e) {
+		console.error('Error getting data from stories route')
 	}
 }
 
